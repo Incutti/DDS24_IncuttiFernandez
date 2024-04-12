@@ -19,7 +19,7 @@ public class Tendencia extends Popularidad{
 
     @Override
     protected String leyenda(Cancion cancion) {
-        return cancion.getNombre()+" - "+cancion.getArtista().getNombre()+"("+cancion.getAlbum().getNombreAlbum() + " - " +cancion.getAlbum().getAnio()+")";
+        return cancion.getNombre()+" - "+cancion.getAlbum().getArtista().getNombre()+"("+cancion.getAlbum().getNombreAlbum() + " - " +cancion.getAlbum().getAnio()+")";
 
     }
 }

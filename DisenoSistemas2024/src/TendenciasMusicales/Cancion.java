@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 public class Cancion {
     private String nombre;
-    private Artista artista;
     private Album album;
     private LocalDateTime ultVezReproducida;
     private int reproducciones;
@@ -12,15 +11,15 @@ public class Cancion {
     private int likes;
     private int dislikes;
 
-    public Cancion(String nombre, Album album, LocalDateTime ultVezReproducida, int reproducciones, Popularidad popularidad, int likes, int dislikes,Artista artista) {
+    public Cancion(String nombre, Album album) {
         this.nombre = nombre;
         this.album = album;
         this.ultVezReproducida = ultVezReproducida;
-        this.reproducciones = reproducciones;
-        this.popularidad = popularidad;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.artista=artista;
+        this.reproducciones = 0;
+        this.popularidad = new Normal();
+        this.likes = 0;
+        this.dislikes = 0;
+
     }
 
     public String getNombre() {
@@ -77,14 +76,6 @@ public class Cancion {
 
     public void setDislikes(int dislikes) {
         this.dislikes = dislikes;
-    }
-
-    public Artista getArtista() {
-        return artista;
-    }
-
-    public void setArtista(Artista artista) {
-        this.artista = artista;
     }
 
     public void reproducir(){
