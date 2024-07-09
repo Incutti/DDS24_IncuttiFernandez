@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -25,8 +26,8 @@ public class Exportable {
         this.exportador = exportador;
     }
 
-    public void ejecutarExportador(){
-        exportador.exportar(this);
+    public String ejecutarExportador(){
+        return exportador.exportar(this);
     }
 
     public Map<String, List<String>> datos(){
