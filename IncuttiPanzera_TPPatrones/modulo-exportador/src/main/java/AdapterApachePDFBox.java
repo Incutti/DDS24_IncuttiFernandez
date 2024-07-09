@@ -10,6 +10,9 @@ import java.util.Map;
 
 public class AdapterApachePDFBox implements AdapterExportadorPDF {
 
+    public AdapterApachePDFBox() {
+    }
+
     public String exportar(Exportable exportable) {
         PDDocument doc = new PDDocument();
         PDPage myPage = new PDPage();

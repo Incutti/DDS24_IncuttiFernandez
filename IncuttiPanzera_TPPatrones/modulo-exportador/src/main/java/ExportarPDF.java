@@ -15,7 +15,7 @@ public class ExportarPDF implements EstrategiaDeExportacion{
     }
 
     public String exportar (Exportable exportable){
-        return "";
+        return adapter.exportar(exportable);
     }
 
 }
