@@ -18,14 +18,14 @@ public class ExportadorTest {
     public void exportarConFactory(){
         this.documento.agregarDatos("2","Joaquin","Gonzalez","33");
         this.documento.setNombre("Datos.xlsx");
-        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.xlsx", ExportableFactory.obtenerEstrategia("EXCEL", this.documento));
+        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.xlsx", ExportableFactory.elegirExtension("EXCEL", this.documento));
     }
 
     @Test
     public void exportarPDF(){
         this.documento.agregarDatos("2","Joaquin","Gonzalez","33");
         this.documento.setNombre("Datos.pdf");
-        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.pdf", ExportableFactory.obtenerEstrategia("PDF", this.documento));
+        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.pdf", ExportableFactory.elegirExtension("PDF", this.documento));
     }
 }
 

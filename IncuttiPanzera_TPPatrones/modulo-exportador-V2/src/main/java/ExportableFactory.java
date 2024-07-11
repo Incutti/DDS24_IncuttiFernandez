@@ -1,5 +1,5 @@
 public class ExportableFactory {
-    public static String obtenerEstrategia(String tipo, Documento documento) {
+    public static String elegirExtension(String tipo, Documento documento) {
         Exportable exportable = null;
         switch (tipo) {
             case "EXCEL":
