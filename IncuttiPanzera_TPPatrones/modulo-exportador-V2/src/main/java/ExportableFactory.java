@@ -1,8 +1,5 @@
 public class ExportableFactory {
-    public static String obtenerEstrategia(String tipo, String key, String nombre, String apellido, String edad) {
-        Documento documento = new Documento();
-        documento.agregarDatos("1", "nombre", "apellido", "edad");
-        documento.agregarDatos(key, nombre, apellido, edad);
+    public static String obtenerEstrategia(String tipo, Documento documento) {
         Exportable exportable = null;
         switch (tipo) {
             case "EXCEL":

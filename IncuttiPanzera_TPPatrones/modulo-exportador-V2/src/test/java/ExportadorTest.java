@@ -5,31 +5,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ExportadorTest {
-    /*private Exportable exportable;
-    private Documento documento;*/
+    private Documento documento;
 
-    @Test
+    @Before
     public void init(){
-        //Documento d=new Documento();
-        //d.agregarDatos("1", "Nombre", "Apellido", "Edad");
-        //documento=d;
-        //this.exportable=new Exportable(new ExportarAExcel("Datos.xlsx"));
-        ExportableFactory.obtenerEstrategia("EXCEL", "2", "Joaquin", "Gonzalez", "33");
+        Documento d=new Documento();
+        d.agregarDatos("1", "Nombre", "Apellido", "Edad");
+        this.documento=d;
     }
 
-    /*@Test
-    public void exportarExcel(){
-        this.documento.agregarDatos("2","Lucas","Gonzalez","33");
-        this.exportable.setDocumento(this.documento);
-        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.xlsx", this.exportable.ejecutarExportador());
+    @Test
+    public void exportarConFactory(){
+        this.documento.agregarDatos("2","Joaquin","Gonzalez","33");
+        this.documento.setNombre("Datos.xlsx");
+        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.xlsx", ExportableFactory.obtenerEstrategia("EXCEL", this.documento));
     }
 
     @Test
     public void exportarPDF(){
-        this.exportable.setExportador(new ExportarPDF(new AdapterApachePDFBox()));
+        this.documento.agregarDatos("2","Joaquin","Gonzalez","33");
         this.documento.setNombre("Datos.pdf");
-        this.documento.agregarDatos("2","Lucas","Gonzalez","33");
-        this.exportable.setDocumento(this.documento);
-        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.pdf", this.exportable.ejecutarExportador());
-    }*/
+        Assert.assertEquals(Config.RUTA_EXPORTACION + "Datos.pdf", ExportableFactory.obtenerEstrategia("PDF", this.documento));
+    }
 }
+
+//EN EL COMMIT ANTERIOR SETEABA EL DOCUMENTO DENTRO DE EXPORTABLE PARA QUE QUEDE 1 SOLA CLASE INSTANCIADA
+//Y EN VEZ D PASARLE EL DOCUMENTO LE PASABA VARIAS STRINGS
+// PERO JUAN ME DIJO QUE TINCHO LE DIJO QUE DOCUMENTO SI SE PUEDE INSTANCIAR
